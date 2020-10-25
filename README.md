@@ -16,3 +16,5 @@ The repository includes the following files
 
  5- api.php
  The API file. This file connects the page to the database. It contains a query that returns the rows of data that it asks for. It received the data that it needs from AJAX (these variables are saying how many and which rows to load). And converts the data from DB into JSON code so AJAX can read it. 
+ 
+ Class source: https://www.udemy.com/course/ajax-project/
