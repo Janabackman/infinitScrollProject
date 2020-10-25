@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- created by Jana Backman. Learning project from Udemy.com. Source: https://www.udemy.com/course/ajax-project/ -->
 <html>
     <head>
         <title>Scroll Project</title>
@@ -31,24 +32,33 @@
             });
             //function to load data from database
             function loadArt(a){
-                
+                //check if holdload is false 
                 if(!holdload){
+                    //hold data to send to api
                     var holder = {oset: oset, iload: a}
+                    //set holdload to true until ajax finish loading so no new ajax request starts befone the last one ends
                     holdload = true;
+                    //ajax request
                     $.ajax({
                         url:"api.php",
                         type: "POST",
                         data: holder,
                         dataType: "JSON",
+                        //if request succeded
                         success: function(data){
                             console.log(data);
+                            //loop data content
                             for(var i = 0; i < data.content.length; i++){
+                                //increment oset to load data from starting from that point in database
                                 oset++;
+                                //variable to hold each data item and output it on html doc
                                 var item = data.content[i];
                                 var html = '<div class = "box">' + item.id + '' + item.content + '' + item.date + '</div>';
                                 $('#content').append(html);
                             }
+                            //set to false so it can continue loading data
                             holdload = false;
+                            //stop loading data when no more rows are available on DB
                             if(data.content.length == 0){
 
                                 holdload = true;
