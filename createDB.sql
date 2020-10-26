@@ -2,7 +2,9 @@ CREATE DATABASE sp;
 USE sp;
 
 CREATE TABLE bposts(
-    id INT(11),
-    content TEXT,
-    date INT(11)
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    content TEXT NOT NULL,
+    date INT(11) NOT NULL,
+
+    CONSTRAINT bposts_PK PRIMARY KEY (id)
 );
