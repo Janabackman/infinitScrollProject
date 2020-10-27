@@ -2,6 +2,7 @@
 This is a project from a class in Udemy.com. In the class we learned how to create an IPA from php, connect it to a database created with phpMyAdmin and use AJAX to load the data from the ipa into the jQuery file and as the user scrolls down the page, more content loads. 
 
 The repository includes the following files.
+ 
  1- Index.html
  This code includes html to output the data + jQuery code that loads the data with AJAX from the IPA file and outputs it to the html page. 
 
